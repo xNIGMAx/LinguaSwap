@@ -1,0 +1,41 @@
+{
+  "name": "language-learning-overlay",
+  "version": "1.0.0",
+  "description": "A Chrome extension that helps users learn new languages by replacing words on web pages with translations",
+  "main": "background.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch",
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "chrome-extension",
+    "language-learning",
+    "translation",
+    "education"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "@types/chrome": "^0.0.237",
+    "@types/jest": "^29.5.2",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.8",
+    "sharp": "^0.33.5",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.85.0",
+    "webpack-cli": "^5.1.1"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
