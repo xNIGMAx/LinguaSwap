@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#27ae60"/>
+  
+  <!-- Speech bubble -->
+  <path d="M40 45 h48 a8 8 0 0 1 8 8 v24 a8 8 0 0 1 -8 8 h-24 l-12 12 v-12 h-12 a8 8 0 0 1 -8 -8 v-24 a8 8 0 0 1 8 -8 z" 
+        fill="white"/>
+  
+  <!-- Text lines representing translations -->
+  <rect x="48" y="55" width="32" height="4" rx="2" fill="#27ae60"/>
+  <rect x="48" y="65" width="24" height="4" rx="2" fill="#27ae60"/>
+  
+  <!-- Language symbol -->
+  <text x="64" y="90" 
+        font-family="Arial, sans-serif" 
+        font-size="24" 
+        font-weight="bold" 
+        fill="#27ae60" 
+        text-anchor="middle">
+    A⟷あ
+  </text>
+</svg> 
