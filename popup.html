@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LinguaSwap</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>LinguaSwap</h1>
+      <div class="mascot">
+        <i class="fas fa-graduation-cap fa-bounce"></i>
+      </div>
+    </div>
+    
+    <div class="card settings-section">
+      <div class="settings-header">
+        <h2><i class="fas fa-cog"></i> Settings</h2>
+        <button id="themeToggle" class="theme-btn" title="Toggle Dark Mode">
+          <i class="fas fa-sun light-icon"></i>
+          <i class="fas fa-moon dark-icon"></i>
+        </button>
+      </div>
+      
+      <div class="setting-group">
+        <label for="wordSource">Word Source:</label>
+        <div class="toggle-group">
+          <button id="apiSource" class="toggle-btn active">
+            <i class="fas fa-globe"></i>
+            API Translation
+          </button>
+          <button id="customSource" class="toggle-btn">
+            <i class="fas fa-file-alt"></i>
+            Custom Words
+          </button>
+        </div>
+      </div>
+
+      <div id="customWordSection" class="setting-group" style="display: none;">
+        <label for="wordFile">Upload Word List (Excel):</label>
+        <div class="file-upload">
+          <input type="file" id="wordFile" accept=".xlsx,.xls,.csv" />
+          <button class="upload-btn">
+            <i class="fas fa-paperclip"></i>
+            Choose File
+          </button>
+          <span class="file-name">No file chosen</span>
+        </div>
+        <div class="template-link">
+          <a href="#" id="downloadTemplate">
+            <i class="fas fa-file-download"></i>
+            Download Template
+          </a>
+        </div>
+      </div>
+
+      <div class="setting-group">
+        <label for="targetLanguage">Target Language:</label>
+        <select id="targetLanguage" class="fancy-select">
+          <option value="es"><i class="fas fa-flag"></i> Spanish</option>
+          <option value="fr"><i class="fas fa-flag"></i> French</option>
+          <option value="de"><i class="fas fa-flag"></i> German</option>
+          <option value="it"><i class="fas fa-flag"></i> Italian</option>
+          <option value="pt"><i class="fas fa-flag"></i> Portuguese</option>
+          <option value="ru"><i class="fas fa-flag"></i> Russian</option>
+          <option value="zh"><i class="fas fa-flag"></i> Chinese</option>
+          <option value="ja"><i class="fas fa-flag"></i> Japanese</option>
+        </select>
+      </div>
+
+      <div class="setting-group">
+        <label for="difficulty">Difficulty Level:</label>
+        <div class="difficulty-slider">
+          <input type="range" id="difficulty" min="1" max="3" value="1" />
+          <div class="difficulty-labels">
+            <span><i class="fas fa-baby"></i> Beginner</span>
+            <span><i class="fas fa-user"></i> Intermediate</span>
+            <span><i class="fas fa-star"></i> Advanced</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="setting-group switch-container">
+        <label class="switch">
+          <input type="checkbox" id="enabled">
+          <span class="slider"></span>
+        </label>
+        <span class="switch-label">
+          <i class="fas fa-power-off"></i>
+          Enable Translation
+        </span>
+      </div>
+    </div>
+
+    <div class="card stats-section">
+      <h2><i class="fas fa-trophy"></i> Progress</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <span class="stat-value" id="wordsLearned">0</span>
+          <span class="stat-label">Words Learned</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-fire"></i>
+          </div>
+          <span class="stat-value" id="streak">0</span>
+          <span class="stat-label">Day Streak</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button id="exportVocab" class="primary-btn">
+        <i class="fas fa-download"></i>
+        Export Vocabulary
+      </button>
+      <button id="settings" class="secondary-btn">
+        <i class="fas fa-sliders-h"></i>
+        Settings
+      </button>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script src="xlsx.full.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html> 

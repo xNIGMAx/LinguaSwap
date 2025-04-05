@@ -1,0 +1,597 @@
+:root {
+  /* Light theme variables */
+  --primary-color: #6C63FF;
+  --secondary-color: #FF6B6B;
+  --success-color: #4CAF50;
+  --background-color: #F8F9FE;
+  --card-background: #FFFFFF;
+  --text-color: #2D3748;
+  --border-color: #E2E8F0;
+  --hover-color: #F7FAFC;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --spacing: 16px;
+  --card-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
+  --transition: all 0.3s ease;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --primary-color: #8B85FF;
+  --secondary-color: #FF8080;
+  --success-color: #69DB7C;
+  --background-color: #1A202C;
+  --card-background: #2D3748;
+  --text-color: #E2E8F0;
+  --border-color: #4A5568;
+  --hover-color: #2C3544;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  width: 360px;
+  margin: 0;
+  padding: var(--spacing);
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+/* Theme toggle styles */
+.theme-toggle {
+  position: absolute;
+  top: var(--spacing);
+  right: var(--spacing);
+}
+
+.theme-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  color: var(--text-color);
+  transition: var(--transition);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-btn:hover {
+  background-color: var(--hover-color);
+}
+
+.theme-btn i {
+  font-size: 1.2rem;
+}
+
+/* Show/hide icons based on theme */
+.light-icon {
+  display: none;
+}
+
+.dark-icon {
+  display: inline-block;
+}
+
+[data-theme="dark"] .light-icon {
+  display: inline-block;
+}
+
+[data-theme="dark"] .dark-icon {
+  display: none;
+}
+
+/* Update existing styles for dark mode compatibility */
+.card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: var(--spacing);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px var(--shadow-color), 0 4px 6px -1px var(--shadow-color);
+}
+
+.toggle-btn {
+  border-color: var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+}
+
+.toggle-btn.active {
+  background: var(--primary-color);
+  color: var(--card-background);
+}
+
+.fancy-select {
+  background-color: var(--card-background);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+.fancy-select option {
+  background-color: var(--card-background);
+  color: var(--text-color);
+}
+
+input[type="range"] {
+  background: var(--border-color);
+}
+
+.difficulty-labels {
+  color: var(--text-color);
+}
+
+.stat-item {
+  background-color: var(--hover-color);
+}
+
+.quiz-buttons button {
+  background-color: var(--hover-color);
+  color: var(--text-color);
+}
+
+.quiz-buttons button:hover {
+  background-color: var(--border-color);
+}
+
+.quiz-stats {
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing);
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.mascot {
+  font-size: 2.5rem;
+  margin-top: 8px;
+  color: var(--primary-color);
+}
+
+.mascot i {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin: 0 0 calc(var(--spacing) / 2) 0;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+h2 i {
+  color: var(--primary-color);
+}
+
+.setting-group {
+  margin-bottom: calc(var(--spacing) * 1.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.toggle-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: 2px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.toggle-btn i {
+  font-size: 1.1em;
+}
+
+.toggle-btn.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.file-upload {
+  position: relative;
+  margin-top: 8px;
+}
+
+.file-upload input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+.upload-btn i {
+  font-size: 1.1em;
+}
+
+.upload-btn:hover {
+  background: #ff5252;
+  transform: translateY(-1px);
+}
+
+.template-link {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.template-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.template-link a i {
+  font-size: 1.1em;
+}
+
+.fancy-select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #E2E8F0;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 0.95rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.fancy-select option i {
+  margin-right: 8px;
+}
+
+.fancy-select:hover, .fancy-select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.difficulty-slider {
+  margin-top: 12px;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+.difficulty-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.difficulty-labels span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.difficulty-labels span i {
+  font-size: 1.1em;
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #E2E8F0;
+  transition: var(--transition);
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: var(--transition);
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--success-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.switch-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.switch-label i {
+  color: var(--text-color);
+  font-size: 1.1em;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing);
+  text-align: center;
+  margin-top: var(--spacing);
+}
+
+.stat-item {
+  background-color: #F7FAFC;
+  padding: calc(var(--spacing) / 1.5);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  background-color: #EDF2F7;
+}
+
+.stat-icon {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+  color: var(--primary-color);
+}
+
+.stat-icon i {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--spacing) / 2);
+  margin-top: var(--spacing);
+}
+
+.primary-btn, .secondary-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.primary-btn i, .secondary-btn i {
+  font-size: 1.1em;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.secondary-btn {
+  background-color: #EDF2F7;
+  color: var(--text-color);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animations */
+.animate-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* File upload feedback */
+.file-name {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.file-name.file-uploaded {
+  color: var(--success-color);
+}
+
+/* Add new settings header styles */
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing);
+}
+
+.settings-header h2 {
+  margin: 0;
+}
+
+/* Update select styles for dark mode */
+[data-theme="dark"] .fancy-select {
+  background-color: var(--card-background);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .fancy-select option {
+  background-color: var(--card-background);
+  color: black;
+}
+
+/* Update stat boxes for dark mode */
+[data-theme="dark"] .stat-item {
+  background-color: #1A1E2B;  /* Darker background for stat boxes */
+}
+
+[data-theme="dark"] .stat-value {
+  color: var(--primary-color);  /* Keep the primary color for numbers */
+}
+
+[data-theme="dark"] .stat-label {
+  color: #E2E8F0;  /* White text for labels */
+}
+
+/* Fix target language select colors */
+[data-theme="dark"] .fancy-select {
+  background-color: var(--card-background);
+  border-color: var(--border-color);
+  color: white;  /* Make text white in dark mode */
+}
+
+[data-theme="dark"] .fancy-select option {
+  background-color: var(--card-background);
+  color: white;  /* Make options text white in dark mode */
+}
+
+/* Update secondary button for dark mode */
+[data-theme="dark"] .secondary-btn {
+  background-color: #EDF2F7;
+  color: black;  /* Force black text in dark mode */
+}
+
+[data-theme="dark"] .secondary-btn i {
+  color: black;  /* Force black icon in dark mode */
+} 
