@@ -1,5 +1,5 @@
 {
-  "name": "language-learning-overlay",
+  "name": "my-linguaswap-app",
   "version": "1.0.0",
   "description": "A Chrome extension that helps users learn new languages by replacing words on web pages with translations",
   "main": "background.js",
@@ -16,7 +16,7 @@
     "translation",
     "education"
   ],
-  "author": "Your Name",
+  "author": "xNIGMAx",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.22.0",
